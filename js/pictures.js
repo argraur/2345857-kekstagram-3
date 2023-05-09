@@ -32,8 +32,6 @@ const createPictureFromObject = (object) => {
 
 export const showPicturesFromObjects = (objects) => {
   const pictures = new DocumentFragment();
-
   pictures.append(...objects.map((object) => createPictureFromObject(object)));
-
   document.querySelector('.pictures').appendChild(pictures);
 };

@@ -4,7 +4,7 @@ import { showErrorMessage, showSuccessMessage } from './message.js';
 import { showPicturesFromObjects } from './pictures.js';
 
 
-export function getData () {
+export const getData = () => {
   fetch('https://27.javascript.pages.academy/kekstagram-simple/data')
     .then((response) => {
       if (response.ok) {
@@ -13,7 +13,7 @@ export function getData () {
     })
     .then((response) => showPicturesFromObjects(response))
     .catch(() => showErrorFetch());
-}
+};
 
 export const sendData = (evt) => {
   fetch('https://27.javascript.pages.academy/kekstagram-simple',

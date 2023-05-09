@@ -13,17 +13,11 @@ const pristine = new Pristine(imageForm, {
   errorTextClass: 'form__error',
 });
 
+const validateHashtag = (element) => regex.test(element) || checkStrLength(element, 0);
+const validateComment = (element) => !checkStrLength(element, 19) && checkStrLength(element, 140);
+
 pristine.addValidator(document.querySelector('.text__description'), validateComment, 'Длина комментария не может быть меньше 20 и больше 140 символов.');
 pristine.addValidator(document.querySelector('.text__hashtags'), validateHashtag, 'Хэштег обязан начинаться с # и не должен превышать 17 символов.');
-
-
-function validateHashtag(element) {
-  return regex.test(element) || checkStrLength(element, 0);
-}
-
-function validateComment(element) {
-  return !checkStrLength(element, 19) && checkStrLength(element, 140);
-}
 
 imageForm.addEventListener('submit', (evt) => {
   evt.preventDefault();

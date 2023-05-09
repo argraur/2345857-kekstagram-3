@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 const getData = () => {
   const error = document.querySelector('#error_fetch').content.cloneNode(true);
   const body = document.querySelector('body');
@@ -30,13 +31,13 @@ const reloadPage = () => {
   location.reload();
 };
 
-function hideError () {
+const hideError = () => {
   const data = getData();
   document.removeEventListener('keydown', closeEsc);
   document.removeEventListener('click', closeClickOut);
   data.errorButton.removeEventListener('click', reloadPage);
   data.body.removeChild(data.errorElement);
-}
+};
 
 export const showErrorFetch = () => {
   const data = getData();
