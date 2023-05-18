@@ -1,6 +1,6 @@
 /* eslint-disable no-use-before-define */
-import { setupListeners, removeListeners } from './effects.js';
-import { resizeImage } from './scale.js';
+import { addEffectsListeners, removeEffectsListeners } from '../effects/effects_editor.js';
+import { resizeImage } from '../effects/scale.js';
 
 const imageForm = document.querySelector('.img-upload__form');
 const imageOverlay = imageForm.querySelector('.img-upload__overlay');
@@ -24,7 +24,7 @@ const openWindow = (e) => {
   imageOverlay.classList.remove('hidden');
   document.body.classList.add('modal-open');
   document.addEventListener('keydown', closeOnEsc);
-  setupListeners();
+  addEffectsListeners();
 };
 
 export const closeWindow = (clean = false) => {
@@ -33,7 +33,7 @@ export const closeWindow = (clean = false) => {
   document.removeEventListener('keydown', closeOnEsc);
   img.classList.remove(...img.classList);
   img.classList.add('effects__preview--none');
-  removeListeners();
+  removeEffectsListeners();
   cleanForm();
   if (clean) {
     cleanImageModifiers();

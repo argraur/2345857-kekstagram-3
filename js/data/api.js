@@ -1,7 +1,7 @@
-import { showErrorFetch } from './error.js';
-import { closeWindow } from './form.js';
-import { showErrorMessage, showSuccessMessage } from './message.js';
-import { showPicturesFromObjects } from './pictures.js';
+import { showErrorFetch } from './fetch_error.js';
+import { closeWindow } from '../form/form.js';
+import { showErrorMessage, showSuccessMessage } from '../form/message.js';
+import { showPicturesFromObjects } from '../utils/pictures.js';
 
 
 export const getData = () => {

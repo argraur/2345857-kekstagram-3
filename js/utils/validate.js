@@ -1,5 +1,5 @@
 import { checkStrLength } from './utils.js';
-import { sendData } from './api.js';
+import { sendData } from '../data/api.js';
 
 const imageForm = document.querySelector('.img-upload__form');
 const regex = new RegExp('^#[а-яА-ЯA-Za-zёЁ0-9]{1,17}$');

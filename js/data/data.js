@@ -1,4 +1,4 @@
-import { createObject } from './utils.js';
+import { createObject } from '../utils/utils.js';
 
 export const generateObjects = () => {
   const objArray = [];
